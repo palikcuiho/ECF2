@@ -4,3 +4,21 @@ services:
     build:
       context: .
       dockerfile: ECF2/Dockerfile
+    depends_on:
+      - sqlserverdb
+      
+  sqlserverdb:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=T0pS€cr€tP@ssw0rd
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+    build:
+      context: Database
+      dockerfile: Dockerfile
+
+
+volumes:
+  sqlvolume:

@@ -2,6 +2,7 @@ using ECF2.Data;
 using ECF2.Helpers;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +15,11 @@ builder.Services.AddControllersWithViews(/*options =>
 }*/
 );
 
+
+string? connectionString = builder.Configuration.GetConnectionString("SqlServerDocker");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerLocalDb") ?? throw new InvalidOperationException("Unable to connect to database due to missing connection string.")));
+    options.UseSqlServer(connectionString ?? throw new InvalidOperationException("Unable to connect to database due to missing connection string.")));
 
 var app = builder.Build();
 
@@ -26,6 +30,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

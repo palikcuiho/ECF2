@@ -18,13 +18,13 @@ namespace ECF2.Models
         public string Description { get; set; }
 
         [Display(Name = "Adresse")]
-        [Required(ErrorMessage = "Veuillez saisir l'adresse de l'événement'")]
+        [Required(ErrorMessage = "Veuillez saisir l'adresse de l'évènement'")]
         [StringLength(255, ErrorMessage = "L'adresse' doit être de maximum {1} caractères.")]
         [MaxLength(255, ErrorMessage = "The address must contain {1} characters or less.")]
         public string Address { get; set; }
 
         [Display(Name = "Type")]
-        [Required(ErrorMessage = "Veuillez sélectionner le type d'événement")]
+        [Required(ErrorMessage = "Veuillez sélectionner le type d'évènement")]
         public EventType EventType { get; set; }
 
         public int EventTypeId { get; set; }
