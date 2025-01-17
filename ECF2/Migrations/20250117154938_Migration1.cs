@@ -96,7 +96,7 @@ namespace ECF2.Migrations
                 columns: new[] { "id", "address", "description", "end_date", "event_type_id", "participant_id", "start_date", "title" },
                 values: new object[,]
                 {
-                    { 1, "123 rue de AAA, 59000 Lille", "Description", new DateTime(2025, 1, 25, 2, 0, 0, 0, DateTimeKind.Unspecified), 2, null, new DateTime(2025, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Titre 2" },
+                    { 1, "123 rue de AAA, 59000 Lille", "Description 1", new DateTime(2025, 1, 25, 2, 0, 0, 0, DateTimeKind.Unspecified), 2, null, new DateTime(2025, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Titre 1" },
                     { 2, "La Civette, Le Cateau-Cambrésis", "Description 2", new DateTime(2025, 2, 1, 3, 0, 0, 0, DateTimeKind.Unspecified), 1, null, new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Titre 2" }
                 });
 

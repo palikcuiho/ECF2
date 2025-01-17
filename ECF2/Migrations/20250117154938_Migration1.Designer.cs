@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECF2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250117141516_Migration1")]
+    [Migration("20250117154938_Migration1")]
     partial class Migration1
     {
         /// <inheritdoc />
@@ -86,11 +86,11 @@ namespace ECF2.Migrations
                         {
                             Id = 1,
                             Address = "123 rue de AAA, 59000 Lille",
-                            Description = "Description",
+                            Description = "Description 1",
                             EndDate = new DateTime(2025, 1, 25, 2, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeId = 2,
                             StartDate = new DateTime(2025, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Titre 2"
+                            Title = "Titre 1"
                         },
                         new
                         {

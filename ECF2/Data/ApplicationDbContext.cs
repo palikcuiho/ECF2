@@ -15,7 +15,7 @@ namespace ECF2.Data
 
         public DbSet<Participant> Participants { get; set; }
         public DbSet<Event> Events { get; set; }
-        public DbSet<Event> EventType { get; set; }
+        public DbSet<EventType> EventType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

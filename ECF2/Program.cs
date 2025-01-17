@@ -1,5 +1,6 @@
 using ECF2.Data;
 using ECF2.Helpers;
+using ECF2.Services;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,10 +17,16 @@ builder.Services.AddControllersWithViews(/*options =>
 );
 
 
-string? connectionString = builder.Configuration.GetConnectionString("SqlServerDocker");
+//string? connectionString = builder.Configuration.GetConnectionString("SqlServerDocker");
+string? connectionString = builder.Configuration.GetConnectionString("SqlServerLocalDb");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString ?? throw new InvalidOperationException("Unable to connect to database due to missing connection string.")));
+
+builder.Services.Configure<ECF2.Models.MongoDatabaseSettings>(
+    builder.Configuration.GetSection("MongoDatabase"));
+
+builder.Services.AddSingleton<StatisticService>();
 
 var app = builder.Build();
 
