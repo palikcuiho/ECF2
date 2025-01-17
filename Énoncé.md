@@ -26,10 +26,10 @@ Implémentez une interface utilisateur pour :
    - Fournir un formulaire permettant de créer ou de modifier un événement.
    - Ajouter une fonctionnalité de suppression avec confirmation.
 
-1. **Développer des composants métier**
+6. **Développer des composants métier**
 
-2. **Développer des composants d’accès aux données SQL et NoSQL** <br>
+7. **Développer des composants d’accès aux données SQL et NoSQL** <br>
 [→ Documentation NoSQL](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-9.0&tabs=visual-studio)
 
-1. **Documentation** <br>
+8. **Documentation** <br>
 Produisez une documentation détaillée

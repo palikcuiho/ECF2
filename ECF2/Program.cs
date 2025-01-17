@@ -1,7 +1,21 @@
+using ECF2.Data;
+using ECF2.Helpers;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(/*options =>
+{
+    // Format route value in kebab case
+    options.Conventions.Add(new RouteTokenTransformerConvention(
+                                 new SlugifyParameterTransformer()));
+}*/
+);
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerLocalDb") ?? throw new InvalidOperationException("Unable to connect to database due to missing connection string.")));
 
 var app = builder.Build();
 
