@@ -1,0 +1,6 @@
+services:
+  ecf2:
+    image: ${DOCKER_REGISTRY-}ecf2
+    build:
+      context: .
+      dockerfile: ECF2/Dockerfile
